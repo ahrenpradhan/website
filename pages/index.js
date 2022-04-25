@@ -3,8 +3,8 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import _ from 'lodash';
 // import { Tween, Timeline, ScrollTrigger, SplitChars } from 'react-gsap';
-// const HomeContainer = dynamic(() => import('components/home/homeContainer'))
-import HomeContainer from 'components/home/homeContainer';
+const HomeContainer = dynamic(() => import('components/home/homeContainer'))
+// import HomeContainer from 'components/home/homeContainer';
 
 
 export default function Home() {

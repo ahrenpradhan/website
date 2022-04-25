@@ -1,6 +1,7 @@
 import { useState, useRef, useImperativeHandle, forwardRef } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
 import Sequence from './sequence';
+import Sequence2 from './sequence/sequence2';
 import { ScrollTrigger, Tween, Timeline, SplitChars, SplitWords } from 'react-gsap';
 
 const ContentBlock1 = () => {
@@ -89,7 +90,7 @@ const ContentBlock2 = () => {
                                         stagger={0.5}
                                         ease="elastic.out(0.1, 0.1)">
                                         <SplitWords
-                                            wrapper={<div style={{ display: 'inline-block', fontSize: '40px', color: 'white' }} />}
+                                            wrapper={<div style={{ display: 'inline-block', fontSize: '26px', color: 'white' }} />}
                                         >
                                             ABOUT ME
                                         </SplitWords>
@@ -107,7 +108,7 @@ const ContentBlock2 = () => {
                                         ease="elastic.out(0.1, 0.1)"
                                     >
                                         <SplitWords
-                                            wrapper={<div style={{ display: 'inline-block', fontSize: '22px', color: 'white' }} />}
+                                            wrapper={<div style={{ display: 'inline-block', fontSize: '16px', color: 'white' }} />}
                                         >
                                             I am a full-stack MERN developer.
                                         </SplitWords>
@@ -123,7 +124,7 @@ const ContentBlock2 = () => {
                                         stagger={0.5}
                                         ease="elastic.out(0.1, 0.1)">
                                         <SplitWords
-                                            wrapper={<div style={{ display: 'inline-block', fontSize: '22px', color: 'white' }} />}
+                                            wrapper={<div style={{ display: 'inline-block', fontSize: '16px', color: 'white' }} />}
                                         >
                                             I am also comfortable with new technology, and ready to use them anywhere, required that, I am given a minimum time to know everything we will need in concern with the problem statement in demand.
                                         </SplitWords>
@@ -139,7 +140,7 @@ const ContentBlock2 = () => {
                                         stagger={0.5}
                                         ease="elastic.out(0.1, 0.1)">
                                         <SplitWords
-                                            wrapper={<div style={{ display: 'inline-block', fontSize: '22px', color: 'white' }} />}
+                                            wrapper={<div style={{ display: 'inline-block', fontSize: '16px', color: 'white' }} />}
                                         >
                                             My objective is to learn new things and perform to meet the standards. Seeking an organization where I can utilize my skills, analytics and education to help the company meet and surpass its goals.
                                         </SplitWords>
@@ -177,11 +178,14 @@ const HomeContainer = () => {
         <div className='home-container'>
             <div className='section-1'>
                 <Controller>
-                    <Scene duration="6000" triggerHook="onLeave" pin>
+                    <Scene duration="4000" triggerHook="onLeave" pin>
                         {progress => (
                             <div style={{ height: "100vh", position: "relative" }}>
                                 <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}>
-                                    <Sequence ref={ref} progress={progress} load={load} handleLoaded={setLoad} />
+                                    {/* <Sequence ref={ref} progress={progress} load={load} handleLoaded={setLoad} /> */}
+                                    <Sequence2
+                                        ref={ref}
+                                        progress={progress} load={load} handleLoaded={setLoad} />
                                 </div>
                                 <ContentBlock1 />
                                 <ContentBlock2 />
@@ -191,10 +195,10 @@ const HomeContainer = () => {
                     {/* <Scene duration="200%" triggerHook="onLeave" pin>
                         {progress => (
                             <div style={{ height: "100vh", position: "relative" }}>
-                                <Sequence ref={ref} progress={progress} load={load} handleLoaded={setLoad} />
+                            <Sequence ref={ref} progress={progress} load={load} handleLoaded={setLoad} />
                             </div>
-                        )}
-                    </Scene> */}
+                            )}
+                        </Scene> */}
                 </Controller>
             </div>
         </div>
